@@ -137,6 +137,7 @@ class SingleChoiceDialogState extends State<CountryPickerDialog> {
             shrinkWrap: true,
             children: _filteredCountries
                 .map((item) => SimpleDialogOption(
+                      key: Key("country_" + item.isoCode.toLowerCase()),
                       child: widget.itemBuilder != null
                           ? widget.itemBuilder(item)
                           : Text(item.name),
